@@ -33,9 +33,15 @@ const Container = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
 `
 
 const NavLogo = styled.div`
+    cursor: pointer;
     
     img {
         width: 100px;
@@ -51,11 +57,13 @@ const NavMenu = styled.div`
 `
 
 const MenuItem = styled.div`
-    margin: 5px;
-    padding: 6px 10px;
+    // margin: 5px;
+    padding: 5px 10px;
     font-size: 16px;
+    font-weight: 500;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 15px;
 
     &:hover {
         background-color: #f4f4f4a6;
