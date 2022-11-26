@@ -10,12 +10,12 @@ function Section({title,description,background,leftButtonText,rightButtonText}) 
         </Background>
         <SectionHeader>
             <h3>{title}</h3>
-            <p>{description}</p>
+            {description ? <p>{description}</p> : <br/>}
         </SectionHeader>
         <SectionFooter>
             <ButtonGroup>
                 <Button text={leftButtonText} theme='dark'/>
-                <Button text={rightButtonText} theme='light'/>
+                {rightButtonText && <Button text={rightButtonText} theme='light'/>}
             </ButtonGroup>
         </SectionFooter>
     </Container>
@@ -25,14 +25,14 @@ function Section({title,description,background,leftButtonText,rightButtonText}) 
 export default Section
 
 const Container = styled.div`
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    overflow: hidden;
 `
 
 const Background = styled.div`
@@ -42,6 +42,7 @@ const Background = styled.div`
     right: 0;
     bottom: 0;
     z-index: -1;
+    overflow: hidden;
     
     img {
         width: 100%;
@@ -71,7 +72,7 @@ const SectionHeader = styled.div`
 `
 
 const SectionFooter = styled.div`
-    margin-top: 10px;
+    margin-top: 10vh;
 `
 
 const ButtonGroup = styled.div`

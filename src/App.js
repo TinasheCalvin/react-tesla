@@ -54,7 +54,7 @@ function App() {
         description=''
         background='/images/accessories.jpg'
         leftButtonText='Order Now'
-        rightButtonText='Learn More'
+        rightButtonText=''
       />
     </Container>
   )
@@ -64,6 +64,7 @@ export default App
 
 const Container = styled.div`
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
+  overflow-x: hidden;
 `
