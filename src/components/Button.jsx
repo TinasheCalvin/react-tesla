@@ -12,8 +12,8 @@ function Button({text,theme}) {
 export default Button
 
 const Container = styled.div`
-    padding: 10px 60px;
-    margin: 0px 20px;
+    padding: 10px 70px;
+    margin: 0px 15px;
     height: 40px;
     display: flex;
     align-items: center;

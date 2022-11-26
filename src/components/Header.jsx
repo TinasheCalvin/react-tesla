@@ -1,27 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { TeslaContext } from '../context/TeslaContext'
 
 function Header() {
-  return (
-    <Container>
-        <NavLogo>
-            <img src='/images/tesla-logo.svg' alt='' />
-        </NavLogo>
-        <NavMenu>
-            <MenuItem>Model S</MenuItem>
-            <MenuItem>Model 3</MenuItem>
-            <MenuItem>Model X</MenuItem>
-            <MenuItem>Model Y</MenuItem>
-            <MenuItem>Solar Roof</MenuItem>
-            <MenuItem>Solar Panels</MenuItem>
-        </NavMenu>
-        <NavMenu>
-            <MenuItem>Shop</MenuItem>
-            <MenuItem>Account</MenuItem>
-            <MenuItem>Menu</MenuItem>
-        </NavMenu>
-    </Container>
-  )
+    const { toggleSidebar } = useContext(TeslaContext)
+    return (
+        <Container>
+            <NavLogo>
+                <img src='/images/tesla-logo.svg' alt='' />
+            </NavLogo>
+            <NavMenu>
+                <MenuItem>Model S</MenuItem>
+                <MenuItem>Model 3</MenuItem>
+                <MenuItem>Model X</MenuItem>
+                <MenuItem>Model Y</MenuItem>
+                <MenuItem>Solar Roof</MenuItem>
+                <MenuItem>Solar Panels</MenuItem>
+            </NavMenu>
+            <NavMenu>
+                <MenuItem>Shop</MenuItem>
+                <MenuItem>Account</MenuItem>
+                <MenuItem onClick={toggleSidebar}>Menu</MenuItem>
+            </NavMenu>
+        </Container>
+    )
 }
 
 export default Header
